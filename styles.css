@@ -1,0 +1,903 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111111;
+  background: radial-gradient(circle at top, #f7f7f7 0, #e9ecf1 40%, #dcdfe6 100%);
+}
+
+@font-face {
+  font-family: "SF Pro Display Medium";
+  src: url("assets/fonts-display/sf-pro-display-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display Semibold";
+  src: url("assets/fonts-display/sf-pro-display-semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display Bold";
+  src: url("assets/fonts-display/SF-Pro-Display-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Rounded Medium";
+  src: url("assets/fonts-rounded/SF-Pro-Rounded-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+}
+
+.nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-logo-image {
+  height: 28px;
+  width: 28px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.nav-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #3a3a3a;
+  padding: 4px 0;
+  transition: color 120ms ease, opacity 120ms ease;
+}
+
+.nav-link:hover {
+  color: #111111;
+  opacity: 0.85;
+}
+
+.nav-right {
+  gap: 12px;
+}
+
+.nav-icon-button {
+  border: none;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.main {
+  padding-top: 0;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: url("assets/headlines/headline-done1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 48px;
+  transform: translateX(-50%);
+}
+
+.hero-buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #1a1a15;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  font-family: "SF Pro Rounded Medium", "SF Pro Display Medium", system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.products {
+  background-color: #e5e5ea;
+  padding: 48px 24px 64px;
+}
+
+.products-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.products-heading {
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 760px;
+}
+
+.products-title {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  font-synthesis: weight;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color: #0b0b0d;
+}
+
+.products-subtitle {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  color: rgba(17, 17, 17, 0.68);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+}
+
+.product-card-media {
+  padding: 24px 24px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+}
+
+.product-card-body {
+  padding: 0 24px 24px;
+}
+
+.product-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e85c0d;
+  margin-bottom: 8px;
+}
+
+.product-tag-blue {
+  color: #1e6ef4;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.product-subtitle {
+  font-size: 13px;
+  color: #555555;
+  margin: 0 0 16px;
+}
+
+.product-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    "SF Pro Display Medium", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.product-price-original {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e6ef4;
+  text-decoration: line-through;
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    "SF Pro Display Medium", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* Features section */
+.features {
+  background-color: #e5e5ea;
+  padding: 48px 24px 64px;
+}
+
+.features-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.features-title {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    "SF Pro Display Medium", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 12px;
+  color: #000000;
+}
+
+.features-subtitle {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 auto 56px;
+  max-width: 640px;
+  color: #6e6e73;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.feature-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.feature-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-placeholder {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3;
+  background-color: #1e6ef4;
+  border-radius: 16px;
+}
+
+.feature-image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.feature-content {
+  padding: 0 0 0 24px;
+}
+
+.feature-heading {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  color: #000000;
+}
+
+.feature-copy {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0;
+  color: #6e6e73;
+}
+
+/* FAQ section */
+.faq {
+  background-color: #e5e5ea;
+  padding: 48px 24px 64px;
+}
+
+.faq-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-title {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    "SF Pro Display Medium", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 32px;
+  color: #000000;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid #d2d2d7;
+  list-style: none;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  padding: 20px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #6e6e73;
+  border-bottom: 2px solid #6e6e73;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+.faq-answer {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #6e6e73;
+  margin: 0 0 20px;
+  padding: 0 0 0 0;
+}
+
+/* Footer (inverted) */
+.footer {
+  background-color: #1a1a15;
+  padding: 56px 24px 0;
+}
+
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand-name {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    "SF Pro Display Medium", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.footer-tagline {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #a1a1a6;
+  margin: 0 0 16px;
+  max-width: 280px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social-link {
+  color: #a1a1a6;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+}
+
+.footer-social-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 48px;
+}
+
+.footer-heading {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #a1a1a6;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px 24px;
+}
+
+.footer-copyright {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11px;
+  color: #6e6e73;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-tagline {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .feature-media {
+    order: 1;
+  }
+
+  .feature-content {
+    order: 2;
+    padding: 0;
+  }
+
+  .features-title {
+    font-size: 28px;
+  }
+
+  .features-subtitle {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding-inline: 16px;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 72px;
+  }
+}
+
+/* Product page (light, sticky image + scrollable content) */
+.product-page {
+  background-color: #e5e5ea;
+}
+
+.product-main {
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-gallery {
+  padding: 32px 24px 32px 48px;
+}
+
+.product-gallery-sticky {
+  /* No sticky; layout is short so image and content flow together */
+}
+
+.product-hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  background: #d2d2d7;
+}
+
+.product-detail {
+  padding: 32px 48px 64px 24px;
+}
+
+.product-detail-inner {
+  max-width: 480px;
+}
+
+.product-detail-tag {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e6ef4;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+.product-detail-title {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0 0 12px;
+}
+
+.product-detail-price {
+  font-family: "SF Pro Display Bold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 24px;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.product-quantity {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.product-qty-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: #000000;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-qty-input {
+  width: 48px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.product-qty-input::-webkit-outer-spin-button,
+.product-qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-add-cart {
+  width: 100%;
+  max-width: 280px;
+  height: 48px;
+  background: #1a1a15;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: "SF Pro Rounded Medium", "SF Pro Display Medium", system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.product-add-cart:hover {
+  background: #2a2a24;
+}
+
+/* Payhip Buy Now button (product page) – solid blue, SF Pro Medium, centered */
+a.payhip-buy-button.product-buy-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 280px;
+  height: 48px;
+  background: #1e6ef4;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+}
+
+a.payhip-buy-button.product-buy-now:hover {
+  background: #1557d1;
+  color: #ffffff;
+}
+
+.product-sections {
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.product-section {
+  margin-bottom: 32px;
+}
+
+.product-section:last-child {
+  margin-bottom: 0;
+}
+
+.product-section-title {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.product-section-text {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #6e6e73;
+  margin: 0;
+}
+
+.product-section-list {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6e6e73;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.product-section-list li {
+  margin-bottom: 8px;
+}
+
+.product-section-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Related products (on product page) */
+.related-products {
+  background-color: #e5e5ea;
+  padding: 48px 24px 64px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.related-products-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.related-products-title {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 24px;
+}
+
+.product-page .products-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-gallery-sticky {
+    position: static;
+  }
+
+  .product-gallery {
+    padding: 24px 24px 16px;
+  }
+
+  .product-detail {
+    padding: 24px 24px 64px;
+  }
+
+  .product-detail-inner {
+    max-width: none;
+  }
+
+  .product-page .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

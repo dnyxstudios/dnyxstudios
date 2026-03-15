@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and temp
+*.log
+.env
+.env.local
+*.tmp
+
+# Optional: uncomment if you want to avoid committing large assets
+# assets/product-pictures/
+# assets/headlines/
