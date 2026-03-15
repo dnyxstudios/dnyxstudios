@@ -638,6 +638,212 @@ body {
   }
 }
 
+/* Contact page */
+.contact-main {
+  padding-top: 64px;
+  min-height: calc(100vh - 64px);
+  background-color: #e5e5ea;
+  padding-bottom: 48px;
+}
+
+.contact-section {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.contact-title {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px;
+}
+
+.contact-intro {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6e6e73;
+  margin: 0 0 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-label {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-family: "SF Pro Display Medium", system-ui, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  background: #ffffff;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: #8e8e93;
+}
+
+.contact-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-submit {
+  width: 100%;
+  max-width: 200px;
+  height: 48px;
+  background: #1e6ef4;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: "SF Pro Display Medium", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.contact-submit:hover {
+  background: #1557d1;
+}
+
+/* License page (Apple-style, minimal) */
+.license-main {
+  padding-top: 64px;
+  min-height: calc(100vh - 64px);
+  background-color: #ffffff;
+  padding-bottom: 80px;
+}
+
+.license-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.license-back {
+  display: inline-block;
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #6e6e73;
+  text-decoration: none;
+  margin-bottom: 32px;
+}
+
+.license-back:hover {
+  color: #000000;
+}
+
+.license-title {
+  font-family: "SF Pro Display Bold", "SF Pro Display Semibold",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0 0 16px;
+}
+
+.license-intro {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #6e6e73;
+  margin: 0 0 48px;
+}
+
+.license-section {
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.license-section:last-of-type {
+  border-bottom: none;
+}
+
+.license-section-title {
+  font-family: "SF Pro Display Semibold", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 12px;
+}
+
+.license-section-lead {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  color: #6e6e73;
+  margin: 0 0 8px;
+}
+
+.license-text {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #1d1d1f;
+  margin: 0;
+}
+
+.license-list {
+  font-family: "SF Pro Display Medium", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1d1d1f;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.license-list li {
+  margin-bottom: 8px;
+}
+
+.license-list li:last-child {
+  margin-bottom: 0;
+}
+
+.license-email {
+  color: #1e6ef4;
+  text-decoration: none;
+}
+
+.license-email:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .license-title {
+    font-size: 32px;
+  }
+
+  .license-inner {
+    padding: 32px 20px;
+  }
+}
+
 /* Product page (light, sticky image + scrollable content) */
 .product-page {
   background-color: #e5e5ea;
