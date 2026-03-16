@@ -42,14 +42,14 @@
       <section class="contact-section">
         <h1 class="contact-title">Contact</h1>
         <p class="contact-intro">Send us a question and we’ll get back to you.</p>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="thank-you.html" method="get" onsubmit="event.preventDefault(); window.location.href='thank-you.html'; return false;">
           <label class="contact-label" for="contact-email">Email</label>
           <input
             type="email"
             id="contact-email"
             name="email"
             class="contact-input"
-            placeholder="your@email.com"
+            placeholder="markzuch@gmail.com"
             required
           />
           <label class="contact-label" for="contact-question">Question</label>
@@ -57,7 +57,7 @@
             id="contact-question"
             name="question"
             class="contact-textarea"
-            placeholder="Your question..."
+            placeholder="I need help opening this..."
             rows="5"
             required
           ></textarea>
@@ -111,9 +111,9 @@
             <h4 class="footer-heading">Legal</h4>
             <ul class="footer-links">
               <li><a href="license.html">License</a></li>
-              <li><a href="#">Refund Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="refund-policy.html">Refund Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
