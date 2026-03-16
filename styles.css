@@ -640,11 +640,24 @@ body {
     display: none;
   }
 
+  /*
+   * Mobile hero: height must match the headline image so there is no blank space
+   * below it. Do NOT use min-height: 100vh here; use aspect-ratio so the button
+   * sits on the image. Desktop keeps min-height: 100vh and cover.
+   */
   .hero {
-    padding-top: 72px;
+    min-height: 0;
+    margin-top: 72px; /* clear fixed nav */
+    padding-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
     background-size: contain;
-    background-position: top center;
+    background-position: center;
     background-color: #e2e5eb;
+  }
+
+  .hero-cta {
+    bottom: 24px;
   }
 }
 

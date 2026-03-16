@@ -1,0 +1,15 @@
+---
+description: Mobile hero section must not have a large blank area; Buy Now stays on the image.
+globs: styles.css, **/index.html
+alwaysApply: false
+---
+
+# Mobile hero layout
+
+When editing the **hero** section or **mobile** styles in `styles.css`:
+
+- **Desktop**: Keep `.hero` with `min-height: 100vh`, `background-size: cover`, and `background-position: center` unchanged.
+- **Mobile** (e.g. `@media (max-width: 768px)`):
+  - Do **not** use `min-height: 100vh` on `.hero`. That creates a large blank area below the headline image.
+  - Use `min-height: 0`, `aspect-ratio: 16 / 9`, and `background-size: contain` so the hero height matches the image and there is no blank section.
+  - Keep the Buy Now button on the image (e.g. `.hero-cta` with `bottom: 24px` or similar) so it appears over the headline image, not in empty space.
