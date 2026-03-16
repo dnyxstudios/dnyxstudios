@@ -642,6 +642,9 @@ body {
 
   .hero {
     padding-top: 72px;
+    background-size: contain;
+    background-position: top center;
+    background-color: #e2e5eb;
   }
 }
 
