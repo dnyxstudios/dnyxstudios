@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# build
+/build
+
+# env files
+.env*.local
+.env
+
+# debug
+npm-debug.log*
+
+# large video assets — deploy via Netlify CLI, not GitHub
+/public/Portfolio/
+
+# misc
+.DS_Store
+*.pem
+.tsbuildinfo
+next-env.d.ts
