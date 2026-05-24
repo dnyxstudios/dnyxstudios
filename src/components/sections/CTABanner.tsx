@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import { useApplyModal } from "@/contexts/ApplyModalContext";
 
 interface CTABannerProps {
   headline?: string;
@@ -20,6 +21,7 @@ export default function CTABanner({
   secondaryLabel = "View Our Work",
   secondaryHref = "/works",
 }: CTABannerProps) {
+  const { setOpen } = useApplyModal();
   return (
     <section className="py-10 bg-[#007AFF] overflow-hidden relative">
       <div className="absolute inset-0 pointer-events-none">
@@ -42,13 +44,7 @@ export default function CTABanner({
             {subtext}
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
-            <Button
-              variant="white"
-              size="lg"
-              data-cal-link="forms/a6ec7dce-a533-4f8f-a563-3a0f33e8b0ca"
-              data-cal-namespace="apply"
-              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
-            >
+            <Button variant="white" size="lg" onClick={() => setOpen(true)}>
               {primaryLabel}
             </Button>
             <a

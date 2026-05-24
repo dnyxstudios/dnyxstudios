@@ -7,16 +7,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { useApplyModal } from "@/contexts/ApplyModalContext";
 
 const links = [
   { label: "Home", href: "/" },
   { label: "Our Work", href: "/works" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { setOpen: openModal } = useApplyModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -61,12 +64,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <Button
-            size="sm"
-            data-cal-link="forms/a6ec7dce-a533-4f8f-a563-3a0f33e8b0ca"
-            data-cal-namespace="apply"
-            data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
-          >
+          <Button size="sm" onClick={() => openModal(true)}>
             Get Started
           </Button>
         </div>
@@ -108,13 +106,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <Button
-                  size="sm"
-                  className="w-full"
-                  data-cal-link="dnyxstudios/video-edit-launch"
-                  data-cal-namespace="video-edit-launch"
-                  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-                >
+                <Button size="sm" className="w-full" onClick={() => { openModal(true); setOpen(false); }}>
                   Get Started
                 </Button>
               </li>

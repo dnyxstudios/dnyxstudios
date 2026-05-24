@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/sections/ContactForm";
-import FAQ from "@/components/sections/FAQ";
-import PageHeader from "@/components/sections/PageHeader";
+import SimpleContactForm from "@/components/sections/SimpleContactForm";
 
 export const metadata: Metadata = {
   title: "Contact — Dnyxstudios",
   description:
-    "Start your motion graphics project. Tell us about your product and goals and we will be back within 24 hours.",
+    "Get in touch with Dnyxstudios. Send us a message and we will get back to you as soon as possible.",
 };
 
 export default function ContactPage() {
-  return (
-    <>
-      <PageHeader
-        label="Contact"
-        title="Let us build something great together"
-        subtitle="Tell us about your product and goals. We will respond within 24 hours with a plan and pricing."
-      />
-      <ContactForm />
-      <FAQ />
-    </>
-  );
+  return <SimpleContactForm />;
 }

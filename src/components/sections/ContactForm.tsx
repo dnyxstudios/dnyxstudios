@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import ApplyForm from "@/components/sections/ApplyForm";
 
 const stats = [
   {
@@ -40,26 +40,6 @@ const stats = [
 ];
 
 export default function ContactForm() {
-  useEffect(() => {
-    function initInline() {
-      const w = window as any;
-      if (!w.Cal?.ns?.apply) return false;
-      w.Cal.ns.apply("inline", {
-        elementOrSelector: "#my-cal-inline-apply",
-        config: { layout: "week_view", useSlotsViewOnSmallScreen: "true", theme: "light" },
-        calLink: "forms/a6ec7dce-a533-4f8f-a563-3a0f33e8b0ca",
-      });
-      return true;
-    }
-
-    if (!initInline()) {
-      const interval = setInterval(() => {
-        if (initInline()) clearInterval(interval);
-      }, 100);
-      return () => clearInterval(interval);
-    }
-  }, []);
-
   return (
     <section className="py-10 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-10 lg:px-16">
@@ -109,12 +89,9 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="bg-white rounded-2xl border border-[#E6E6E6] overflow-hidden"
+            className="bg-white rounded-2xl border border-[#E6E6E6] p-6"
           >
-            <div
-              id="my-cal-inline-apply"
-              style={{ width: "100%", height: "100%", minHeight: "660px", overflow: "scroll" }}
-            />
+            <ApplyForm />
           </motion.div>
 
         </div>

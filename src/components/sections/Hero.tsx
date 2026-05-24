@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRightIcon, StarIcon } from "@heroicons/react/24/solid";
 import Button from "@/components/ui/Button";
+import { useApplyModal } from "@/contexts/ApplyModalContext";
 
 const testimonials = [
   {
@@ -77,6 +78,7 @@ function TestimonialCard({
 }
 
 export default function Hero() {
+  const { setOpen } = useApplyModal();
   return (
     <section className="relative bg-[#F8F9FA] overflow-hidden pt-16">
       <div className="max-w-7xl mx-auto px-10 lg:px-16 w-full py-10">
@@ -129,13 +131,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-start gap-3 mt-1"
             >
-              <Button
-                size="md"
-                className="rounded-xl"
-                data-cal-link="forms/a6ec7dce-a533-4f8f-a563-3a0f33e8b0ca"
-                data-cal-namespace="apply"
-                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
-              >
+              <Button size="md" className="rounded-xl" onClick={() => setOpen(true)}>
                 Start Your Project
               </Button>
               <a

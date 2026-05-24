@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { cn } from "@/lib/utils";
@@ -93,13 +94,14 @@ export default function FAQ() {
               Questions we get asked a lot
             </h2>
             <p className="mt-4 text-[#4C4C4D] leading-relaxed">
-              Still have questions? Email us at{" "}
-              <a
-                href="mailto:danny@dnyxstudios.com"
+              Still have questions?{" "}
+              <Link
+                href="/contact"
                 className="text-[#007AFF] hover:underline"
               >
-                danny@dnyxstudios.com
-              </a>
+                Get in touch
+              </Link>
+              .
             </p>
           </motion.div>
 
